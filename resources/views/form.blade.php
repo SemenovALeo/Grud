@@ -3,10 +3,10 @@
 @section('title', isset($user) ? 'Update '.$user->name:'Create user')
 
 @section('content')
-    <a href="{{route('user.index')}}" type="button" class="btn btn-secondary">Back to users</a>
-    <form method="post"
+    <a type="button" class="btn btn-secondary" href="{{route('user.index')}}">back to users</a>
+    <form method="POST"
           @if(isset($user))
-          action="{{route('user.update',$user)}}"
+          action="{{route('user.update', $user)}}"
           @else
           action="{{route('user.store')}}"
           @endif
@@ -19,22 +19,23 @@
             <div class="col">
                 <input name="name"
                        value="{{isset($user) ? $user->name : null}}"
-                       type="text" class="form-control" placeholder="Name" aria-label="First name">
+                       type="text" class="form-control" placeholder="Name" aria-label="name">
             </div>
-
         </div>
         <div class="row mt-3">
             <div class="col">
                 <input name="email"
                        value="{{isset($user) ? $user->email : null}}"
-                       type="text" class="form-control" placeholder="E-mail" aria-label="Last name">
+                       type="text" class="form-control" placeholder="E-mail" aria-label="email">
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-4">
             <div class="col">
                 <button type="submit" class="btn btn-success">Create</button>
             </div>
         </div>
+
+
     </form>
 
 @endsection

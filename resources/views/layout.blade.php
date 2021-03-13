@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <meta name="theme-color" content="#7952b3">
 
@@ -32,13 +33,17 @@
 <div class="container">
     <h1>@yield('title')</h1>
     <main>
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+            @if(session('danger'))
+                <div class="alert alert-danger">{{ session('danger') }}</div>
+            @endif
         @yield('content')
     </main>
 
 
 </div>
-
-
 
 
 <script src="https://bootstrap-4.ru/docs/5.0/examples/checkout/form-validation.js"></script>

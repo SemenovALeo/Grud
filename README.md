@@ -7,7 +7,7 @@
 
 cd /var/www/
 
-git clone https://github.com/Buzuluk56/Grud folder
+git clone https://github.com/SemenovALeo/Grud folder
 
 cd folder
 
